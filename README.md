@@ -1,6 +1,6 @@
 # Love Game Maker
 
-DISCLAIMER: As of now, this readme is a "filler" readme. Basically it details things as they will be in it's complete state that may not apply as of now, and it was quickly-written in order to have a readme as quickly as possible. If you notice an issue with the readme, please submit an "issue" on this file explaining the problem, and I'll fix it right away. Or, if you'd like to take matters into your own hands, fork the repository and make your edits to the readme there. Then submit your modified readme as a pull request. Thanks for reading, and enjoy the project! :)
+DISCLAIMER: As of now, this readme is a "filler" readme. Basically it details things as they will be in the project's complete state that may not apply as of now, and it was quickly-written in order to have a readme as quickly as possible. If you notice an issue with the readme, please submit an "issue" on this file explaining the problem, and I'll fix it right away. Or, if you'd like to take matters into your own hands, fork the repository and make your edits to the readme there. Then submit your modified readme as a pull request. Thanks for reading, and enjoy the project! :)
 
 #What's Love?!?
 
