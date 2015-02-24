@@ -17,6 +17,7 @@ namespace LGM
     public partial class Main : Form
     {
         private int childFormNumber = 0;
+        private string projectname = "Untitled";
 
         public Main()
         {
@@ -25,13 +26,14 @@ namespace LGM
             //toolStrip.Renderer = new MyToolStripSystemRenderer();
             toolStrip.Renderer = new MyToolStripSystemRenderer();
             MDIClientSupport.SetBevel(this,false);
+            this.Text = projectname + " - Love Game Maker";
         }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new PowerfulSample();
             childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
+            childForm.Text = "Object" + childFormNumber++;
             childForm.Show();
         }
 
@@ -91,12 +93,12 @@ namespace LGM
 
         private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.TileVertical);
+            
         }
 
         private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.TileHorizontal);
+            
         }
 
         private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,8 +127,32 @@ namespace LGM
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //menuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
-            //toolStrip.Renderer = new MyToolStripSystemRenderer();
+            MdiClient ctlMDI;
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    // Attempt to cast the control to type MdiClient.
+                    ctlMDI = (MdiClient)ctl;
+
+                    // Set the BackColor of the MdiClient control.
+                    ctlMDI.BackColor = Color.FromArgb(144, 212, 242);
+                }
+                catch (InvalidCastException exc)
+                {
+                    // Catch and ignore the error if casting failed.
+                }
+            }
+        }
+
+        private void verticallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void horizontallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
         }
     }
 
