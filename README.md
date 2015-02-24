@@ -186,7 +186,7 @@ Cool! Obviously, as mentioned several times above, this project needs a website.
 
 --Can you beta-test software?
 
-Neat! Simply download the latest release version of the source within the major branch, try it out, and submit an "issue" for anything you notice that's wrong with it! Thanks! :)
+Neat! Simply download the latest binary release version of the source within the releases tab, try it out, and submit an "issue" for anything you notice that's wrong with it! Thanks! :)
 
 --Do you have anything else you can contribute?
 
