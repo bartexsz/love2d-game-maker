@@ -17,16 +17,54 @@ namespace LGM
     public partial class Main : Form
     {
         private int childFormNumber = 0;
-        private string projectname = "Untitled";
+        public static string projectname = null;
+        public static bool issaved = false;
 
         public Main()
         {
             InitializeComponent();
-            //toolStrip.Renderer.RenderToolStripBorder += OnRenderToolStripBorder;
-            //toolStrip.Renderer = new MyToolStripSystemRenderer();
+            this.FormClosing += Main_Closing;
             toolStrip.Renderer = new MyToolStripSystemRenderer();
             MDIClientSupport.SetBevel(this,false);
-            this.Text = projectname + " - Love Game Maker";
+            UpdateTitle();
+        }
+
+        private void Save(bool saveas)
+        {
+            if (!saveas)
+            {
+                //Save the project
+            }
+            else
+            {
+                //Save the project as something.
+            }
+            issaved = true;
+            UpdateTitle();
+        }
+
+        private string getprojectname()
+        {
+            if (projectname == null)
+            {
+                return "Untitled";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        private void UpdateTitle()
+        {
+            if (issaved)
+            {
+                this.Text = getprojectname() + " - Love Game Maker";
+            }
+            else
+            {
+                this.Text = getprojectname() + "* - Love Game Maker";
+            }
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -35,6 +73,8 @@ namespace LGM
             childForm.MdiParent = this;
             childForm.Text = "Object" + childFormNumber++;
             childForm.Show();
+            issaved = false;
+            UpdateTitle();
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -48,15 +88,32 @@ namespace LGM
             }
         }
 
+        private void Main_Closing(object sender, FormClosingEventArgs e)
+        {
+            if (!issaved)
+            {
+                DialogResult areusure = MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "LGM Script Editor", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (areusure == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+                else if (areusure == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //TODO: Save the file
+                }
+            }
+        }
+
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            /*SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = saveFileDialog.FileName;
-            }
+            }*/
+            Save(true);
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
@@ -114,17 +171,6 @@ namespace LGM
             }
         }
 
-        /*public class TestStripRenderer : ToolStripProfessionalRenderer
-        {
-            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
-            {
-                if (e.ToolStrip.GetType().Name != "MyCustomToolStrip")
-                {
-                    //base.OnRenderToolStripBorder(e);
-                }
-            }
-        }*/
-
         private void Main_Load(object sender, EventArgs e)
         {
             MdiClient ctlMDI;
@@ -153,6 +199,16 @@ namespace LGM
         private void horizontallyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            Save(false);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save(false);
         }
     }
 

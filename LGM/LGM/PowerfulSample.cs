@@ -41,19 +41,7 @@ namespace LGM
 
         void PowerfulSample_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!saved)
-            {
-                DialogResult areusure = MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "LGM Script Editor", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                if (areusure == System.Windows.Forms.DialogResult.Cancel)
-                {
-                    e.Cancel = true;
-                }
-                else if (areusure == System.Windows.Forms.DialogResult.Yes)
-                {
-                    //Save the file
-                    savescript();
-                }
-            }
+            //
         }
 
         void savescript()
