@@ -20,3 +20,4 @@ C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM
 C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.PowerfulSample.resources
 C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.Properties.Resources.resources
 C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.csproj.GenerateResource.Cache
+C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.MessageForm.resources

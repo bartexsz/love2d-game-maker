@@ -18,7 +18,9 @@ namespace LGM
     {
         private int childFormNumber = 0;
         public static string projectname = null;
-        public static bool issaved = false;
+        public static bool issaved = true;
+
+        private Image warning = Properties.Resources.warning1;
 
         public Main()
         {
@@ -92,14 +94,17 @@ namespace LGM
         {
             if (!issaved)
             {
-                DialogResult areusure = MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "LGM Script Editor", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult areusure = CustomMessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", CustomMessageBox.eDialogButtons.YesNoCancel, warning);
                 if (areusure == System.Windows.Forms.DialogResult.Cancel)
                 {
+                    //Don't close the form!
                     e.Cancel = true;
                 }
                 else if (areusure == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //TODO: Save the file
+                    //Save the file before closing
+                    Save(false);
                 }
             }
         }
