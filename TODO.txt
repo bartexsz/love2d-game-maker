@@ -1,0 +1,8 @@
+This file details the next few important tasks that need to be done to the project.
+IT DOES NOT DETAIL ALL THE THINGS THAT MUST BE DONE!!!
+
+Must add the actual source. (Yeah, no kidding. :P)
+Must add an actual license.
+Must configure folders as described in the readme
+
+Lots of other things
