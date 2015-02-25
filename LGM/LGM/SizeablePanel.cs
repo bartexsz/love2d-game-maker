@@ -54,7 +54,7 @@ public class SizeableTreeView : Panel
             }
             else
             {
-                this.Cursor = Cursors.SizeWE;
+                this.Cursor = Cursors.Default;
             }
         }
         else

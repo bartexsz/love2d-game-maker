@@ -20,6 +20,7 @@ namespace LGM
         public static string projectname = null;
         public static bool issaved = true;
         public static bool ontreeview = false;
+        public static ImageList imglist;
 
         private Image warning = Properties.Resources.warning1;
 
@@ -99,7 +100,6 @@ namespace LGM
         {
             if (!issaved)
             {
-                //MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 System.Media.SystemSounds.Asterisk.Play();
                 DialogResult areusure = CustomMessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", CustomMessageBox.eDialogButtons.YesNoCancel, warning);
                 if (areusure == System.Windows.Forms.DialogResult.Cancel)
@@ -200,10 +200,6 @@ namespace LGM
                     // Catch and ignore the error if casting failed.
                 }
             }
-
-            /*this.splitContainer1.Panel2.Hide();
-            this.splitContainer1.Width = 20;
-            this.splitContainer1.SplitterDistance = 20;*/
         }
 
         private void verticallyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -236,37 +232,14 @@ namespace LGM
             Cursor = Cursors.Default;
             ontreeview = true;
         }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
     {
         public MyToolStripSystemRenderer() { }
 
-
-   /*Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As ToolStripItemRenderEventArgs)
-      Dim r As Rectangle = e.Item.ContentRectangle
-
-      If e.Item.Selected Then
-         Dim b = New LinearGradientBrush(r, Color.FromArgb(255, 227, 224, 215), Color.White, LinearGradientMode.Vertical)
-         Try
-            e.Graphics.FillRectangle(b, e.Item.ContentRectangle)
-         Finally
-            b.Dispose()
-         End Try
-      End If
-   End Sub*/
-
-        
-
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
-            //MessageBox.Show("");
-            Console.WriteLine("OK2");
             Rectangle r = e.Item.ContentRectangle;
 
             if (e.Item.Selected)
@@ -282,14 +255,12 @@ namespace LGM
                 }
             }
             base.OnRenderMenuItemBackground(e);
-            Console.WriteLine("OK2");
         }
 
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             //Making this non-op removes the artifact line that is typically drawn on the bottom edge
             //base.OnRenderToolStripBorder(e);
-            Console.WriteLine("OK");
         }
     }
 }
