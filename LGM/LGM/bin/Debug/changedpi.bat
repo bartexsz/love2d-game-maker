@@ -1,1 +1,1 @@
-reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "" /t REG_SZ /d "~ HIGHDPIAWARE"
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\bin\Debug\LGM.exe" /t REG_SZ /d "~ HIGHDPIAWARE"

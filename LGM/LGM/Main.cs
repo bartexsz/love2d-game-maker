@@ -85,7 +85,8 @@ namespace LGM
                 System.IO.File.WriteAllText(Application.StartupPath+"\\changedpi.bat",chngdpitxt);
                 ProcessStartInfo chngdpi = new ProcessStartInfo(Application.StartupPath+"\\changedpi.bat");
                 chngdpi.CreateNoWindow = true;
-                Process.Start(chngdpi);
+                Process chngdpiprc = Process.Start(chngdpi);
+                chngdpiprc.WaitForExit();
                 System.IO.File.WriteAllText(Application.StartupPath+"\\changedpi.bat",blankchngdpi);
                 System.IO.File.Delete(Application.StartupPath+"\\dontdeleteme.txt");
                 Process.Start(Application.StartupPath+"\\LGM.exe");
