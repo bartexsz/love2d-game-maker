@@ -68,22 +68,25 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.resourceListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.newbtn = new System.Windows.Forms.ToolStripButton();
             this.openbtn = new System.Windows.Forms.ToolStripButton();
             this.savebtn = new System.Windows.Forms.ToolStripButton();
-            this.settingsbtn = new System.Windows.Forms.ToolStripButton();
+            this.testbtn = new System.Windows.Forms.ToolStripButton();
             this.buildbtn = new System.Windows.Forms.ToolStripButton();
-            this.helpbtn = new System.Windows.Forms.ToolStripButton();
+            this.settingsbtn = new System.Windows.Forms.ToolStripButton();
             this.spritebtn = new System.Windows.Forms.ToolStripButton();
             this.objectbtn = new System.Windows.Forms.ToolStripButton();
             this.bgbtn = new System.Windows.Forms.ToolStripButton();
             this.soundbtn = new System.Windows.Forms.ToolStripButton();
             this.roombtn = new System.Windows.Forms.ToolStripButton();
             this.scriptbtn = new System.Windows.Forms.ToolStripButton();
-            this.testbtn = new System.Windows.Forms.ToolStripButton();
+            this.helpbtn = new System.Windows.Forms.ToolStripButton();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buildGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,9 +94,6 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buildGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.sizeableTreeView1 = new SizeableTreeView();
             this.resourcelist = new System.Windows.Forms.TreeView();
             this.menuStrip.SuspendLayout();
@@ -250,21 +250,21 @@
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -274,20 +274,20 @@
             this.verticallyToolStripMenuItem,
             this.horizontallyToolStripMenuItem});
             this.tileWindowsToolStripMenuItem.Name = "tileWindowsToolStripMenuItem";
-            this.tileWindowsToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.tileWindowsToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.tileWindowsToolStripMenuItem.Text = "T&ile Windows";
             // 
             // verticallyToolStripMenuItem
             // 
             this.verticallyToolStripMenuItem.Name = "verticallyToolStripMenuItem";
-            this.verticallyToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.verticallyToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.verticallyToolStripMenuItem.Text = "&Vertically";
             this.verticallyToolStripMenuItem.Click += new System.EventHandler(this.verticallyToolStripMenuItem_Click);
             // 
             // horizontallyToolStripMenuItem
             // 
             this.horizontallyToolStripMenuItem.Name = "horizontallyToolStripMenuItem";
-            this.horizontallyToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this.horizontallyToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.horizontallyToolStripMenuItem.Text = "&Horizontally";
             this.horizontallyToolStripMenuItem.Click += new System.EventHandler(this.horizontallyToolStripMenuItem_Click);
             // 
@@ -387,6 +387,11 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(260, 6);
+            // 
             // newbtn
             // 
             this.newbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -417,14 +422,15 @@
             this.savebtn.Text = "Save";
             this.savebtn.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
-            // settingsbtn
+            // testbtn
             // 
-            this.settingsbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsbtn.Image = global::LGM.Properties.Resources.settings1;
-            this.settingsbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.settingsbtn.Name = "settingsbtn";
-            this.settingsbtn.Size = new System.Drawing.Size(28, 28);
-            this.settingsbtn.Text = "Settings";
+            this.testbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.testbtn.Image = global::LGM.Properties.Resources.play;
+            this.testbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.testbtn.Name = "testbtn";
+            this.testbtn.Size = new System.Drawing.Size(28, 28);
+            this.testbtn.Text = "Test Your Game";
+            this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
             // 
             // buildbtn
             // 
@@ -435,14 +441,14 @@
             this.buildbtn.Size = new System.Drawing.Size(28, 28);
             this.buildbtn.Text = "Build Your Game";
             // 
-            // helpbtn
+            // settingsbtn
             // 
-            this.helpbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpbtn.Image = global::LGM.Properties.Resources.help1;
-            this.helpbtn.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.helpbtn.Name = "helpbtn";
-            this.helpbtn.Size = new System.Drawing.Size(28, 28);
-            this.helpbtn.Text = "Help";
+            this.settingsbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.settingsbtn.Image = global::LGM.Properties.Resources.settings1;
+            this.settingsbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settingsbtn.Name = "settingsbtn";
+            this.settingsbtn.Size = new System.Drawing.Size(28, 28);
+            this.settingsbtn.Text = "Settings";
             // 
             // spritebtn
             // 
@@ -499,15 +505,14 @@
             this.scriptbtn.Size = new System.Drawing.Size(28, 28);
             this.scriptbtn.Text = "Add a Script";
             // 
-            // testbtn
+            // helpbtn
             // 
-            this.testbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.testbtn.Image = global::LGM.Properties.Resources.play;
-            this.testbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.testbtn.Name = "testbtn";
-            this.testbtn.Size = new System.Drawing.Size(28, 28);
-            this.testbtn.Text = "Test Your Game";
-            this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
+            this.helpbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpbtn.Image = global::LGM.Properties.Resources.help1;
+            this.helpbtn.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.helpbtn.Name = "helpbtn";
+            this.helpbtn.Size = new System.Drawing.Size(28, 28);
+            this.helpbtn.Text = "Help";
             // 
             // newToolStripMenuItem
             // 
@@ -538,6 +543,23 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // testGameToolStripMenuItem
+            // 
+            this.testGameToolStripMenuItem.Image = global::LGM.Properties.Resources.play;
+            this.testGameToolStripMenuItem.Name = "testGameToolStripMenuItem";
+            this.testGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.testGameToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
+            this.testGameToolStripMenuItem.Text = "&Test Game";
+            this.testGameToolStripMenuItem.Click += new System.EventHandler(this.testGameToolStripMenuItem_Click);
+            // 
+            // buildGameToolStripMenuItem
+            // 
+            this.buildGameToolStripMenuItem.Image = global::LGM.Properties.Resources.build;
+            this.buildGameToolStripMenuItem.Name = "buildGameToolStripMenuItem";
+            this.buildGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.buildGameToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
+            this.buildGameToolStripMenuItem.Text = "&Build Game";
             // 
             // undoToolStripMenuItem
             // 
@@ -602,28 +624,6 @@
             this.contentsToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
-            // testGameToolStripMenuItem
-            // 
-            this.testGameToolStripMenuItem.Image = global::LGM.Properties.Resources.play;
-            this.testGameToolStripMenuItem.Name = "testGameToolStripMenuItem";
-            this.testGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.testGameToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
-            this.testGameToolStripMenuItem.Text = "&Test Game";
-            this.testGameToolStripMenuItem.Click += new System.EventHandler(this.testGameToolStripMenuItem_Click);
-            // 
-            // buildGameToolStripMenuItem
-            // 
-            this.buildGameToolStripMenuItem.Image = global::LGM.Properties.Resources.build;
-            this.buildGameToolStripMenuItem.Name = "buildGameToolStripMenuItem";
-            this.buildGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.buildGameToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
-            this.buildGameToolStripMenuItem.Text = "&Build Game";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(260, 6);
-            // 
             // sizeableTreeView1
             // 
             this.sizeableTreeView1.BackColor = System.Drawing.Color.White;
@@ -666,8 +666,9 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 697);
             this.Controls.Add(this.sizeableTreeView1);
