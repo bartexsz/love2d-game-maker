@@ -50,6 +50,16 @@ namespace LGM
             {
                 dx = g.DpiX;
                 MessageBox.Show(dx.ToString()+" , "+this.Width.ToString()+" , " + this.Height.ToString());
+                if (dx == 96)
+                {
+                    this.Width = 471;
+                    this.Height = 171;
+                }
+                else if (dx == 144)
+                {
+                    this.Width = 704;
+                    this.Height = 261;
+                }
             }
             finally
             {
