@@ -195,6 +195,10 @@ namespace LGM
                     // Catch and ignore the error if casting failed.
                 }
             }
+
+            /*this.splitContainer1.Panel2.Hide();
+            this.splitContainer1.Width = 20;
+            this.splitContainer1.SplitterDistance = 20;*/
         }
 
         private void verticallyToolStripMenuItem_Click(object sender, EventArgs e)
