@@ -11,6 +11,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Runtime.InteropServices;
 
 namespace LGM
 {
@@ -54,6 +55,8 @@ namespace LGM
 
             //Define all the Resource variables
             Resources.DefineResourceArrays();
+
+            this.AutoScaleBaseSize = new Size(5, 13);
         }
         
         private void Main_Load(object sender, EventArgs e)
@@ -316,7 +319,10 @@ namespace LGM
         }
         #endregion
 
-        
+        private void objectbtn_Click(object sender, EventArgs e)
+        {
+           //
+        }
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
