@@ -31,9 +31,9 @@ namespace LGM
             Process_DPI_Unaware = 0,
             Process_System_DPI_Aware = 1,
             Process_Per_Monitor_DPI_Aware = 2
-        }*/
+        }
 
         //[System.Runtime.InteropServices.DllImport("user32.dll")]
-        //private static extern bool SetProcessDPIAware();
+        //private static extern bool SetProcessDPIAware();*/
     }
 }
