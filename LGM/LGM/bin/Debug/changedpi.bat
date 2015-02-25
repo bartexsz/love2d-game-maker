@@ -1,0 +1,1 @@
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "" /t REG_SZ /d "~ HIGHDPIAWARE"
