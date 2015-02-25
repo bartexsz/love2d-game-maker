@@ -28,19 +28,23 @@ namespace LGM
                         message.btnNo.Visible = false;
                         message.btnCancel.Visible = false;
                         message.btnOK.Location = message.btnCancel.Location;
+                        message.AcceptButton = message.btnOK;
                         break;
                     case eDialogButtons.OKCancel:
                         message.btnYes.Visible = false;
                         message.btnNo.Visible = false;
+                        message.AcceptButton = message.btnOK;
                         break;
                     case eDialogButtons.YesNo:
                         message.btnOK.Visible = false;
                         message.btnCancel.Visible = false;
                         message.btnYes.Location = message.btnOK.Location;
                         message.btnNo.Location = message.btnCancel.Location;
+                        message.AcceptButton = message.btnYes;
                         break;
                     case eDialogButtons.YesNoCancel:
                         message.btnOK.Visible = false;
+                        message.AcceptButton = message.btnYes;
                         break;
                 }
 

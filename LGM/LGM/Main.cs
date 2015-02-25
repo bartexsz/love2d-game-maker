@@ -20,7 +20,7 @@ namespace LGM
         public static string projectname = null;
         public static bool issaved = true;
         public static bool ontreeview = false;
-        public static ImageList imglist;
+        //public static ImageList imglist;
         TreeNode Sprites;
         TreeNode Objects;
         TreeNode Backgrounds;
@@ -29,6 +29,7 @@ namespace LGM
         TreeNode Scripts;
 
         private Image warning = Properties.Resources.warning1;
+        private Image error = Properties.Resources.error1;
 
         public Main()
         {
@@ -72,21 +73,33 @@ namespace LGM
             }
         }
         
-        int whatever = 5;
+        int whatever = 0;
 
         private void AddSprite()
         {
             //Adds a sprite to the resource list
-            if (resourcelist.Nodes[0] != null)
+            if (resourcelist.GetNodeCount(true) > 0 && resourcelist.Nodes[0] != null)
             {
                 string yourChildNode;
-                
-                yourChildNode = "Sprite";
-                TreeNode ok = resourcelist.Nodes[1].Nodes.Add(yourChildNode);
+                yourChildNode = "Sprite" + whatever.ToString();
+                TreeNode ok = resourcelist.Nodes[0].Nodes.Add(yourChildNode);
                 whatever++;
-                MessageBox.Show(resourcelist.Nodes[1].Nodes[0].ToString());
+                MessageBox.Show(resourcelist.Nodes[0].Nodes[whatever-1].ToString());
                 resourcelist.ExpandAll();
             }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void Error(int errorcode)
+        {
+            //Displays an error message including an error code, and closes the program.
+            System.Media.SystemSounds.Hand.Play();
+            CustomMessageBox.Show("Love Game Maker has encountered an error and needs to close!" + Environment.NewLine + "ERROR CODE: " + errorcode.ToString(), "Love Game Maker", CustomMessageBox.eDialogButtons.OK, error);
+            issaved = true;
+            Application.Exit();
         }
 
         private void TestGame()
