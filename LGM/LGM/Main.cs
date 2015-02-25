@@ -94,7 +94,8 @@ namespace LGM
         {
             if (!issaved)
             {
-                MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                //MessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                System.Media.SystemSounds.Asterisk.Play();
                 DialogResult areusure = CustomMessageBox.Show("You have unsaved changes! Would you like to save your work first?", "Love Game Maker", CustomMessageBox.eDialogButtons.YesNoCancel, warning);
                 if (areusure == System.Windows.Forms.DialogResult.Cancel)
                 {

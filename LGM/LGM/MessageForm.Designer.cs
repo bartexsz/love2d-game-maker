@@ -46,7 +46,7 @@
             // 
             this.picImage.ErrorImage = null;
             this.picImage.InitialImage = null;
-            this.picImage.Location = new System.Drawing.Point(19, 5);
+            this.picImage.Location = new System.Drawing.Point(19, 14);
             this.picImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(96, 98);
@@ -59,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(125, 5);
+            this.lblText.Location = new System.Drawing.Point(123, 32);
             this.lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblText.MaximumSize = new System.Drawing.Size(441, 0);
             this.lblText.Name = "lblText";
