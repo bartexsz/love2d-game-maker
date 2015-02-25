@@ -39,5 +39,22 @@ namespace LGM
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void MessageForm_Load(object sender, EventArgs e)
+        {
+            //DPI adjustment
+            Graphics g = this.CreateGraphics();
+            float dx;
+
+            try
+            {
+                dx = g.DpiX;
+                MessageBox.Show(dx.ToString()+" , "+this.Width.ToString()+" , " + this.Height.ToString());
+            }
+            finally
+            {
+                g.Dispose();
+            }
+        }
     }
 }
