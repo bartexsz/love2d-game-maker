@@ -232,6 +232,16 @@ namespace LGM
             Cursor = Cursors.Default;
             ontreeview = true;
         }
+
+        private void resourceListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sizeableTreeView1.Visible = resourceListToolStripMenuItem.Checked;
+        }
+
+        private void printPreviewToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
