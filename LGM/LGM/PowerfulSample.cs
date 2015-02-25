@@ -19,7 +19,7 @@ namespace LGM
 {
     public partial class PowerfulSample : Form
     {
-        bool saved = false;
+        //bool saved = false;
         
         string lang = "Lua";
 

@@ -21,21 +21,81 @@ namespace LGM
         public static bool issaved = true;
         public static bool ontreeview = false;
         public static ImageList imglist;
+        TreeNode Sprites;
+        TreeNode Objects;
+        TreeNode Backgrounds;
+        TreeNode Sounds;
+        TreeNode Rooms;
+        TreeNode Scripts;
 
         private Image warning = Properties.Resources.warning1;
 
         public Main()
         {
+            //Initialize the main component
             InitializeComponent();
+
+            //Add Events
             this.FormClosing += Main_Closing;
             toolStrip.Renderer = new MyToolStripSystemRenderer();
-            treeView1.MouseMove += treeView1_MouseMove;
-            treeView1.MouseLeave += treeView1_MouseLeave;
+            resourcelist.MouseMove += treeView1_MouseMove;
+            resourcelist.MouseLeave += treeView1_MouseLeave;
             MDIClientSupport.SetBevel(this,false);
             UpdateTitle();
+
+            //Define the TreeNode variables
+            Sprites = this.resourcelist.Nodes[0];
+            Objects = this.resourcelist.Nodes[1];
+            Backgrounds = this.resourcelist.Nodes[2];
+            Sounds = this.resourcelist.Nodes[3];
+            Rooms = this.resourcelist.Nodes[4];
+            Scripts = this.resourcelist.Nodes[5];
+        }
+        
+        private void Main_Load(object sender, EventArgs e)
+        {
+            MdiClient ctlMDI;
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    // Attempt to cast the control to type MdiClient.
+                    ctlMDI = (MdiClient)ctl;
+
+                    // Set the BackColor of the MdiClient control.
+                    ctlMDI.BackColor = Color.FromArgb(144, 212, 242);
+                }
+                catch (InvalidCastException exc)
+                {
+                    // Catch and ignore the error if casting failed.
+                }
+            }
+        }
+        
+        int whatever = 5;
+
+        private void AddSprite()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.Nodes[0] != null)
+            {
+                string yourChildNode;
+                
+                yourChildNode = "Sprite";
+                TreeNode ok = resourcelist.Nodes[1].Nodes.Add(yourChildNode);
+                whatever++;
+                MessageBox.Show(resourcelist.Nodes[1].Nodes[0].ToString());
+                resourcelist.ExpandAll();
+            }
         }
 
-        
+        private void TestGame()
+        {
+            //Tests the game using LOVE 2D
+            MessageBox.Show(Resources.resourcetypes[0].ToString());
+            MessageBox.Show(Resources.resourcenames[0].ToString());
+            MessageBox.Show(Resources.resourcedata[0].ToString());
+        }
 
         private void Save(bool saveas)
         {
@@ -115,15 +175,9 @@ namespace LGM
             }
         }
 
+        #region All the buttons/Menu items
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }*/
             Save(true);
         }
 
@@ -159,16 +213,6 @@ namespace LGM
             LayoutMdi(MdiLayout.Cascade);
         }
 
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.ArrangeIcons);
@@ -179,26 +223,6 @@ namespace LGM
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
-            }
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            MdiClient ctlMDI;
-            foreach (Control ctl in this.Controls)
-            {
-                try
-                {
-                    // Attempt to cast the control to type MdiClient.
-                    ctlMDI = (MdiClient)ctl;
-
-                    // Set the BackColor of the MdiClient control.
-                    ctlMDI.BackColor = Color.FromArgb(144, 212, 242);
-                }
-                catch (InvalidCastException exc)
-                {
-                    // Catch and ignore the error if casting failed.
-                }
             }
         }
 
@@ -238,10 +262,24 @@ namespace LGM
             sizeableTreeView1.Visible = resourceListToolStripMenuItem.Checked;
         }
 
-        private void printPreviewToolStripButton_Click(object sender, EventArgs e)
+        private void testbtn_Click(object sender, EventArgs e)
         {
-
+            //TODO: Open the game in Love 2D for testing.
+            TestGame();
         }
+
+        private void testGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestGame();
+        }
+        
+        private void spritebtn_Click(object sender, EventArgs e)
+        {
+            AddSprite();
+        }
+        #endregion
+
+        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
@@ -270,7 +308,7 @@ namespace LGM
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             //Making this non-op removes the artifact line that is typically drawn on the bottom edge
-            //base.OnRenderToolStripBorder(e);
+            base.OnRenderToolStripBorder(e);
         }
     }
 }
