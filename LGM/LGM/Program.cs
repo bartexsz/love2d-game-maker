@@ -18,12 +18,12 @@ namespace LGM
             //if (Environment.OSVersion.Version.Major >= 6) SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SetProcessDpiAwareness(_Process_DPI_Awareness.Process_DPI_Unaware);
+            //SetProcessDpiAwareness(_Process_DPI_Awareness.Process_DPI_Unaware);
             MessageBox.Show("Another DPI test!");
             Application.Run(new Main());
         }
 
-        [DllImport("shcore.dll")]
+        /*[DllImport("shcore.dll")]
         static extern int SetProcessDpiAwareness(_Process_DPI_Awareness value);
 
         enum _Process_DPI_Awareness
@@ -31,7 +31,7 @@ namespace LGM
             Process_DPI_Unaware = 0,
             Process_System_DPI_Aware = 1,
             Process_Per_Monitor_DPI_Aware = 2
-        }
+        }*/
 
         //[System.Runtime.InteropServices.DllImport("user32.dll")]
         //private static extern bool SetProcessDPIAware();
