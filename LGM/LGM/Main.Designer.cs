@@ -75,10 +75,12 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sizeablePanel1 = new SizeablePanel();
+            this.sizeableTreeView1 = new SizeableTreeView();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.sizeableTreeView1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -479,14 +481,25 @@
             this.contentsToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
-            // sizeablePanel1
+            // sizeableTreeView1
             // 
-            this.sizeablePanel1.BackColor = System.Drawing.Color.White;
-            this.sizeablePanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sizeablePanel1.Location = new System.Drawing.Point(0, 66);
-            this.sizeablePanel1.Name = "sizeablePanel1";
-            this.sizeablePanel1.Size = new System.Drawing.Size(200, 601);
-            this.sizeablePanel1.TabIndex = 0;
+            this.sizeableTreeView1.BackColor = System.Drawing.Color.White;
+            this.sizeableTreeView1.Controls.Add(this.treeView1);
+            this.sizeableTreeView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sizeableTreeView1.Location = new System.Drawing.Point(0, 66);
+            this.sizeableTreeView1.Name = "sizeableTreeView1";
+            this.sizeableTreeView1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.sizeableTreeView1.Size = new System.Drawing.Size(214, 601);
+            this.sizeableTreeView1.TabIndex = 4;
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.Color.White;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(209, 601);
+            this.treeView1.TabIndex = 0;
             // 
             // Main
             // 
@@ -494,7 +507,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 697);
-            this.Controls.Add(this.sizeablePanel1);
+            this.Controls.Add(this.sizeableTreeView1);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -511,6 +524,7 @@
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.sizeableTreeView1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,7 +577,8 @@
         private System.Windows.Forms.ToolStripMenuItem tileWindowsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verticallyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem horizontallyToolStripMenuItem;
-        private SizeablePanel sizeablePanel1;
+        private SizeableTreeView sizeableTreeView1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 

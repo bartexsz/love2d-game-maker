@@ -2,13 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-public class SizeablePanel : Panel
+public class SizeableTreeView : Panel
 {
     private const int cGripSize = 20;
     private bool mDragging;
     private Point mDragPos;
 
-    public SizeablePanel()
+    public SizeableTreeView()
     {
         this.DoubleBuffered = true;
         this.SetStyle(ControlStyles.ResizeRedraw, true);
@@ -22,7 +22,7 @@ public class SizeablePanel : Panel
 
     private bool IsOnGrip(Point pos)
     {
-        return pos.X >= this.ClientSize.Width - 5;
+        return pos.X >= this.ClientSize.Width-4;
     }
 
     protected override void OnMouseDown(MouseEventArgs e)
@@ -43,11 +43,29 @@ public class SizeablePanel : Panel
         if (mDragging)
         {
             this.Size = new Size(this.Width + e.X - mDragPos.X,
-              this.Height + e.Y - mDragPos.Y);
+            this.Height + e.Y - mDragPos.Y);
             mDragPos = e.Location;
         }
-        else if (IsOnGrip(e.Location)) this.Cursor = Cursors.SizeWE;
-        else this.Cursor = Cursors.Default;
+        else if (IsOnGrip(e.Location))
+        {
+            if (!LGM.Main.ontreeview)
+            {
+                this.Cursor = Cursors.SizeWE;
+            }
+            else
+            {
+                this.Cursor = Cursors.SizeWE;
+            }
+        }
+        else
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        if (IsOnGrip(e.Location))
+        {
+            Console.WriteLine(e.Location.ToString());
+        }
         base.OnMouseMove(e);
     }
 }
