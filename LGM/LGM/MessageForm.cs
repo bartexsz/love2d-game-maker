@@ -54,11 +54,17 @@ namespace LGM
                 {
                     this.Width = 471;
                     this.Height = 171;
+                    //MessageBox.Show(btnYes.Location.ToString());
+                    btnYes.Size = new System.Drawing.Size(86,24);
+                    btnYes.Location = new System.Drawing.Point(166,16);
+                    //MessageBox.Show(btnYes.Location.ToString());
                 }
                 else if (dx == 144)
                 {
                     this.Width = 704;
                     this.Height = 261;
+                    btnYes.Size = new System.Drawing.Size(129, 37);
+                    btnYes.Location = new System.Drawing.Point(249, 29);
                 }
             }
             finally
