@@ -49,7 +49,7 @@
             this.picImage.Location = new System.Drawing.Point(38, 45);
             this.picImage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(48, 49);
+            this.picImage.Size = new System.Drawing.Size(48, 48);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImage.TabIndex = 0;
             this.picImage.TabStop = false;

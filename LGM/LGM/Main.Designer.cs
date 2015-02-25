@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Sprites");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Objects");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Backgrounds");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Sounds");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Rooms");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Scripts");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Sprites");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Objects");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Backgrounds");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Sounds");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Rooms");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Scripts");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -440,7 +440,7 @@
             // toolStrip
             // 
             this.toolStrip.BackColor = System.Drawing.Color.White;
-            this.toolStrip.GripMargin = new System.Windows.Forms.Padding(8, 8, 2, 2);
+            this.toolStrip.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -462,7 +462,7 @@
             this.helpbtn});
             this.toolStrip.Location = new System.Drawing.Point(0, 35);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Padding = new System.Windows.Forms.Padding(16, 0, 2, 0);
+            this.toolStrip.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.toolStrip.Size = new System.Drawing.Size(948, 31);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
@@ -643,25 +643,25 @@
             this.resourcelist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resourcelist.Location = new System.Drawing.Point(0, 0);
             this.resourcelist.Name = "resourcelist";
-            treeNode1.Name = "Sprites";
-            treeNode1.Text = "Sprites";
-            treeNode2.Name = "Objects";
-            treeNode2.Text = "Objects";
-            treeNode3.Name = "Backgrounds";
-            treeNode3.Text = "Backgrounds";
-            treeNode4.Name = "Sounds";
-            treeNode4.Text = "Sounds";
-            treeNode5.Name = "Rooms";
-            treeNode5.Text = "Rooms";
-            treeNode6.Name = "Scripts";
-            treeNode6.Text = "Scripts";
+            treeNode7.Name = "Sprites";
+            treeNode7.Text = "Sprites";
+            treeNode8.Name = "Objects";
+            treeNode8.Text = "Objects";
+            treeNode9.Name = "Backgrounds";
+            treeNode9.Text = "Backgrounds";
+            treeNode10.Name = "Sounds";
+            treeNode10.Text = "Sounds";
+            treeNode11.Name = "Rooms";
+            treeNode11.Text = "Rooms";
+            treeNode12.Name = "Scripts";
+            treeNode12.Text = "Scripts";
             this.resourcelist.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
             this.resourcelist.Size = new System.Drawing.Size(286, 602);
             this.resourcelist.TabIndex = 0;
             // 
@@ -677,7 +677,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Love Game Maker -- New Project";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

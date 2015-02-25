@@ -82,14 +82,37 @@ namespace LGM
             
         }
 
+        public static int DPIIconSize(float dx)
+        {
+            if (dx == 96)
+            {
+                return 32;
+            }
+            else if (dx == 120)
+            {
+                return 40;
+            }
+            else if (dx == 144)
+            {
+                return 48;
+            }
+            else if (dx == 192)
+            {
+                return 64;
+            }
+            return 32;
+        }
+
         public static int CorrectDPIvalues(int val,float per)
         {
+            //Get the x/y values to use by multiplying the current ones by the DPI percentage.
             return val * Convert.ToInt32(per) / 100;
         }
 
         private void CorrectDPI()
         {
             //Corrects the form to be the right size according to the current DPI.
+            //TODO: Correct size of main form.
             /*float dx;
             Graphics g = this.CreateGraphics();
 
@@ -125,13 +148,6 @@ namespace LGM
             {
                 Resources.resourcenames[0, Resources.resourcetypecnt[0]] = "Sprite" + Resources.resourcetypecnt[0].ToString();
                 TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resourcenames[0,Resources.resourcetypecnt[0]]);
-                //MessageBox.Show(resourcelist.Nodes[0].Nodes[Resources.resourcetypecnt[0]].ToString());
-                //MessageBox.Show(Resources.resourcenames[0,Resources.resourcetypecnt[0]]);
-                /*string yourChildNode;
-                yourChildNode = "Sprite" + whatever.ToString();
-                TreeNode ok = resourcelist.Nodes[0].Nodes.Add(yourChildNode);
-                //whatever++;
-                MessageBox.Show(resourcelist.Nodes[0].Nodes[whatever-1].ToString());*/
                 resourcelist.ExpandAll();
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -337,12 +353,14 @@ namespace LGM
         {
             AddSprite();
         }
-        #endregion
-
+        
         private void objectbtn_Click(object sender, EventArgs e)
         {
            //
         }
+        #endregion
+
+        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
