@@ -236,6 +236,11 @@ namespace LGM
             Cursor = Cursors.Default;
             ontreeview = true;
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
