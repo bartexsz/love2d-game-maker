@@ -51,6 +51,9 @@ namespace LGM
             Sounds = this.resourcelist.Nodes[3];
             Rooms = this.resourcelist.Nodes[4];
             Scripts = this.resourcelist.Nodes[5];
+
+            //Define all the Resource variables
+            Resources.DefineResourceArrays();
         }
         
         private void Main_Load(object sender, EventArgs e)
@@ -72,20 +75,25 @@ namespace LGM
                 }
             }
         }
-        
-        int whatever = 0;
 
         private void AddSprite()
         {
             //Adds a sprite to the resource list
             if (resourcelist.GetNodeCount(true) > 0 && resourcelist.Nodes[0] != null)
             {
-                string yourChildNode;
+                Resources.resourcenames[0, Resources.resourcetypecnt[0]] = "Sprite" + Resources.resourcetypecnt[0].ToString();
+                TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resourcenames[0,Resources.resourcetypecnt[0]]);
+                //MessageBox.Show(resourcelist.Nodes[0].Nodes[Resources.resourcetypecnt[0]].ToString());
+                //MessageBox.Show(Resources.resourcenames[0,Resources.resourcetypecnt[0]]);
+                /*string yourChildNode;
                 yourChildNode = "Sprite" + whatever.ToString();
                 TreeNode ok = resourcelist.Nodes[0].Nodes.Add(yourChildNode);
-                whatever++;
-                MessageBox.Show(resourcelist.Nodes[0].Nodes[whatever-1].ToString());
+                //whatever++;
+                MessageBox.Show(resourcelist.Nodes[0].Nodes[whatever-1].ToString());*/
                 resourcelist.ExpandAll();
+                
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[0]++; //Increase the number of sprites by one.
             }
             else
             {
@@ -105,9 +113,6 @@ namespace LGM
         private void TestGame()
         {
             //Tests the game using LOVE 2D
-            MessageBox.Show(Resources.resourcetypes[0].ToString());
-            MessageBox.Show(Resources.resourcenames[0].ToString());
-            MessageBox.Show(Resources.resourcedata[0].ToString());
         }
 
         private void Save(bool saveas)
