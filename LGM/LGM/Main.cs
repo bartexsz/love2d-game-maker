@@ -76,7 +76,7 @@ namespace LGM
             }
 
             //TEMPORARY: Add registry key to disable dpi scaling for this program. Will be handled by the installer in the final version.
-            if (System.IO.File.Exists(Application.StartupPath + "\\changedpi.bat") && System.IO.File.Exists(Application.StartupPath + "\\dontdeleteme.txt") && MessageBox.Show("The application has detected this is your first time running Love game Maker. The program will now write a registry value to prevent im-proper DPI scaling of the program (making everything look bad/out of place.) Do you wish to proceed? (Things may look seriously messed up through-out the program if you don't!) This will be done automatically by the installer in the final release.","Love Game Maker",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            /*if (System.IO.File.Exists(Application.StartupPath + "\\changedpi.bat") && System.IO.File.Exists(Application.StartupPath + "\\dontdeleteme.txt") && MessageBox.Show("The application has detected this is your first time running Love game Maker. The program will now write a registry value to prevent im-proper DPI scaling of the program (making everything look bad/out of place.) Do you wish to proceed? (Things may look seriously messed up through-out the program if you don't!) This will be done automatically by the installer in the final release.","Love Game Maker",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 string blankchngdpi = System.IO.File.ReadAllText(Application.StartupPath + "\\changedpi.bat");
                 string path = Application.StartupPath+"\\LGM.exe";
@@ -91,7 +91,7 @@ namespace LGM
                 System.IO.File.Delete(Application.StartupPath+"\\dontdeleteme.txt");
                 Process.Start(Application.StartupPath+"\\LGM.exe");
                 Application.Exit();
-            }
+            }*/
             
         }
 
@@ -113,10 +113,6 @@ namespace LGM
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
                 Resources.resourcetypecnt[0]++; //Increase the number of sprites by one.
-
-                
-
-                /*reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "full path to Executable" /t REG_SZ /d "~ HIGHDPIAWARE"*/
             }
             else
             {
