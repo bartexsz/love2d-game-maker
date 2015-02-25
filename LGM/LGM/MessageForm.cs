@@ -42,30 +42,30 @@ namespace LGM
 
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            //DPI adjustment
+            CorrectDPI();
+        }
+
+        private void CorrectDPI()
+        {
+            //Corrects the form to be the right size according to the current DPI.
             Graphics g = this.CreateGraphics();
             float dx;
 
             try
             {
                 dx = g.DpiX;
-                MessageBox.Show(dx.ToString()+" , "+this.Width.ToString()+" , " + this.Height.ToString());
-                if (dx == 96)
-                {
-                    this.Width = 471;
-                    this.Height = 171;
-                    //MessageBox.Show(btnYes.Location.ToString());
-                    btnYes.Size = new System.Drawing.Size(86,24);
-                    btnYes.Location = new System.Drawing.Point(166,16);
-                    //MessageBox.Show(btnYes.Location.ToString());
-                }
-                else if (dx == 144)
-                {
-                    this.Width = 704;
-                    this.Height = 261;
-                    btnYes.Size = new System.Drawing.Size(129, 37);
-                    btnYes.Location = new System.Drawing.Point(249, 29);
-                }
+
+                this.Width = Main.CorrectDPIvalues(471, dx);
+                this.Height = Main.CorrectDPIvalues(171, dx);
+                btnYes.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
+                btnYes.Location = new System.Drawing.Point(Main.CorrectDPIvalues(166, dx), Main.CorrectDPIvalues(16, dx));
+                btnNo.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
+                btnNo.Location = new System.Drawing.Point(Main.CorrectDPIvalues(264, dx), Main.CorrectDPIvalues(16, dx));
+                btnOK.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
+                btnOK.Location = new System.Drawing.Point(Main.CorrectDPIvalues(264, dx), Main.CorrectDPIvalues(16, dx));
+                btnCancel.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
+                btnCancel.Location = new System.Drawing.Point(Main.CorrectDPIvalues(360, dx), Main.CorrectDPIvalues(16, dx));
+                
             }
             finally
             {
