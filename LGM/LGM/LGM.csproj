@@ -148,9 +148,6 @@
     <None Include="Resources\paste1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\warning1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\play.png" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\error1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
