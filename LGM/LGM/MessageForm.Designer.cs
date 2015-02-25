@@ -46,10 +46,10 @@
             // 
             this.picImage.ErrorImage = null;
             this.picImage.InitialImage = null;
-            this.picImage.Location = new System.Drawing.Point(25, 29);
-            this.picImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picImage.Location = new System.Drawing.Point(38, 45);
+            this.picImage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(32, 32);
+            this.picImage.Size = new System.Drawing.Size(48, 49);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImage.TabIndex = 0;
             this.picImage.TabStop = false;
@@ -61,21 +61,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(65, 37);
-            this.lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblText.MaximumSize = new System.Drawing.Size(700, 0);
+            this.lblText.Location = new System.Drawing.Point(98, 57);
+            this.lblText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblText.MaximumSize = new System.Drawing.Size(1050, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(29, 15);
+            this.lblText.Size = new System.Drawing.Size(44, 25);
             this.lblText.TabIndex = 0;
             this.lblText.Text = "Text";
             // 
             // btnYes
             // 
             this.btnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnYes.Location = new System.Drawing.Point(166, 13);
-            this.btnYes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnYes.Location = new System.Drawing.Point(249, 24);
+            this.btnYes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(86, 24);
+            this.btnYes.Size = new System.Drawing.Size(129, 37);
             this.btnYes.TabIndex = 2;
             this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@
             // btnNo
             // 
             this.btnNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNo.Location = new System.Drawing.Point(264, 13);
-            this.btnNo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNo.Location = new System.Drawing.Point(396, 24);
+            this.btnNo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(86, 24);
+            this.btnNo.Size = new System.Drawing.Size(129, 37);
             this.btnNo.TabIndex = 3;
             this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = true;
@@ -96,10 +96,10 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(360, 13);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(540, 24);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 24);
+            this.btnCancel.Size = new System.Drawing.Size(129, 37);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -108,10 +108,10 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(264, 13);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOK.Location = new System.Drawing.Point(396, 24);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(86, 24);
+            this.btnOK.Size = new System.Drawing.Size(129, 37);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -122,6 +122,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -137,21 +138,21 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
             this.splitContainer1.Panel2.Controls.Add(this.btnYes);
             this.splitContainer1.Panel2.Controls.Add(this.btnNo);
-            this.splitContainer1.Size = new System.Drawing.Size(455, 133);
-            this.splitContainer1.SplitterDistance = 83;
-            this.splitContainer1.SplitterWidth = 2;
+            this.splitContainer1.Size = new System.Drawing.Size(682, 205);
+            this.splitContainer1.SplitterDistance = 127;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 5;
             // 
             // MessageForm
             // 
             this.AcceptButton = this.btnYes;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(455, 133);
+            this.ClientSize = new System.Drawing.Size(682, 205);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MessageForm";

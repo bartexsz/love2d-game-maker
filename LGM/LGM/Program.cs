@@ -15,7 +15,8 @@ namespace LGM
         [STAThread]
         static void Main()
         {
-            if (Environment.OSVersion.Version.Major >= 6) SetProcessDPIAware();
+            //MessageBox.Show(Environment.OSVersion.Version.Major.ToString()+"."+Environment.OSVersion.Version.Minor.ToString());
+            //if (Environment.OSVersion.Version.Major >= 6) MessageBox.Show(SetProcessDPIAware().ToString());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //SetProcessDpiAwareness(_Process_DPI_Awareness.Process_DPI_Unaware);
@@ -33,7 +34,7 @@ namespace LGM
             Process_Per_Monitor_DPI_Aware = 2
         }*/
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
+        //private static extern bool SetProcessDPIAware();
     }
 }
