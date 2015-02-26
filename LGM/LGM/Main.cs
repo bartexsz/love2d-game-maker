@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Web;
 
 namespace LGM
 {
@@ -44,6 +45,7 @@ namespace LGM
             toolStrip.Renderer = new MyToolStripSystemRenderer();
             resourcelist.MouseMove += treeView1_MouseMove;
             resourcelist.MouseLeave += treeView1_MouseLeave;
+            resourcelist.AfterLabelEdit += resourcelist_AfterLabelEdit;
             MDIClientSupport.SetBevel(this,false);
             UpdateTitle();
 
@@ -54,6 +56,7 @@ namespace LGM
             Sounds = this.resourcelist.Nodes[3];
             Rooms = this.resourcelist.Nodes[4];
             Scripts = this.resourcelist.Nodes[5];
+            resourcelist.LabelEdit = true;
 
             //Define all the Resource variables
             Resources.DefineResourceArrays();
@@ -151,6 +154,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Sprite());
                 Resources.resources[Resources.resourcecnt].name = "Sprite" + Resources.resourcetypecnt[0].ToString();
                 TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -174,6 +178,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Object());
                 Resources.resources[Resources.resourcecnt].name = "Object" + Resources.resourcetypecnt[1].ToString();
                 TreeNode newsprite = resourcelist.Nodes[1].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -197,6 +202,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Background());
                 Resources.resources[Resources.resourcecnt].name = "Background" + Resources.resourcetypecnt[2].ToString();
                 TreeNode newsprite = resourcelist.Nodes[2].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -220,6 +226,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Sound());
                 Resources.resources[Resources.resourcecnt].name = "Sound" + Resources.resourcetypecnt[3].ToString();
                 TreeNode newsprite = resourcelist.Nodes[3].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -243,6 +250,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Room());
                 Resources.resources[Resources.resourcecnt].name = "Room" + Resources.resourcetypecnt[4].ToString();
                 TreeNode newsprite = resourcelist.Nodes[4].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -266,6 +274,7 @@ namespace LGM
                 Resources.resources.Add(new Resources.Script());
                 Resources.resources[Resources.resourcecnt].name = "Script" + Resources.resourcetypecnt[5].ToString();
                 TreeNode newsprite = resourcelist.Nodes[5].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                newsprite.Tag = Resources.resourcecnt;
                 resourcelist.ExpandAll();
 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -301,8 +310,12 @@ namespace LGM
 
         private void TestGame()
         {
-            //Tests the game using LOVE 2D
-            GeneratedCode.GenerateCode();
+            //TODO: Test the game using LOVE 2D
+            foreach (Resources.Types nm in Resources.resources)
+            {
+                MessageBox.Show(nm.name);
+            }
+            //GeneratedCode.GenerateCode();
         }
 
         private void Save(bool saveas)
@@ -361,6 +374,20 @@ namespace LGM
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
+            }
+        }
+
+        void resourcelist_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            Resources.resources[Convert.ToInt32(e.Node.Tag)].name = e.Label;
+        }
+
+        private void RenameResource()
+        {
+            //The super-simple way to re-name resources!
+            if (resourcelist.SelectedNode.Parent != null)
+            {
+                resourcelist.SelectedNode.BeginEdit();
             }
         }
 
@@ -531,9 +558,12 @@ namespace LGM
         {
             AddScript();
         }
+        private void renameResourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Renames the selected resource
+            RenameResource();
+        }
         #endregion
-
-        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
