@@ -650,6 +650,8 @@ namespace LGM
                 {
                     Spriteeditor spreditr = new Spriteeditor();
                     spreditr.MdiParent = this;
+                    spreditr.name = Resources.resources[Convert.ToInt32(e.Node.Tag)].name;
+                    spreditr.id = Convert.ToInt32(e.Node.Tag);
                     spreditr.Show();
                 }
             }
