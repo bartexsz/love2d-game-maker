@@ -57,6 +57,7 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameResourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +99,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.sizeableTreeView1 = new SizeableTreeView();
             this.resourcelist = new System.Windows.Forms.TreeView();
-            this.renameResourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteResourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -232,7 +233,8 @@
             this.pasteToolStripMenuItem,
             this.toolStripSeparator7,
             this.selectAllToolStripMenuItem,
-            this.renameResourceToolStripMenuItem});
+            this.renameResourceToolStripMenuItem,
+            this.deleteResourceToolStripMenuItem});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(54, 29);
             this.editMenu.Text = "&Edit";
@@ -301,6 +303,14 @@
             this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.selectAllToolStripMenuItem.Text = "Select &All";
+            // 
+            // renameResourceToolStripMenuItem
+            // 
+            this.renameResourceToolStripMenuItem.Name = "renameResourceToolStripMenuItem";
+            this.renameResourceToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.renameResourceToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.renameResourceToolStripMenuItem.Text = "Re&name Resource";
+            this.renameResourceToolStripMenuItem.Click += new System.EventHandler(this.renameResourceToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -692,13 +702,13 @@
             this.resourcelist.Size = new System.Drawing.Size(286, 602);
             this.resourcelist.TabIndex = 0;
             // 
-            // renameResourceToolStripMenuItem
+            // deleteResourceToolStripMenuItem
             // 
-            this.renameResourceToolStripMenuItem.Name = "renameResourceToolStripMenuItem";
-            this.renameResourceToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.renameResourceToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
-            this.renameResourceToolStripMenuItem.Text = "Re&name Resource";
-            this.renameResourceToolStripMenuItem.Click += new System.EventHandler(this.renameResourceToolStripMenuItem_Click);
+            this.deleteResourceToolStripMenuItem.Name = "deleteResourceToolStripMenuItem";
+            this.deleteResourceToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteResourceToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.deleteResourceToolStripMenuItem.Text = "&Delete Resource";
+            this.deleteResourceToolStripMenuItem.Click += new System.EventHandler(this.deleteResourceToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -794,6 +804,7 @@
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGeneratedCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renameResourceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteResourceToolStripMenuItem;
     }
 }
 

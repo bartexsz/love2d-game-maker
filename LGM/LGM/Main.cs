@@ -155,6 +155,8 @@ namespace LGM
                 Resources.resources[Resources.resourcecnt].name = "Sprite" + Resources.resourcetypecnt[0].ToString();
                 TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
                 newsprite.Tag = Resources.resourcecnt;
+                newsprite.ToolTipText = Resources.resourcecnt.ToString();
+                resourcelist.ShowNodeToolTips = true;
                 resourcelist.ExpandAll();
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
@@ -311,9 +313,9 @@ namespace LGM
         private void TestGame()
         {
             //TODO: Test the game using LOVE 2D
-            foreach (Resources.Types nm in Resources.resources)
+            for(int i =0;i< Resources.resources.Count;i++)
             {
-                MessageBox.Show(nm.name);
+                MessageBox.Show(Resources.resources[i].name);
             }
             //GeneratedCode.GenerateCode();
         }
@@ -377,6 +379,53 @@ namespace LGM
             }
         }
 
+        private void UpdateTreeView()
+        {
+            for (int k = 0; k < resourcelist.Nodes.Count; k++)
+            {
+                resourcelist.Nodes[k].Nodes.Clear();
+            }
+                for (int i = 0; i < Resources.resources.Count; i++)
+                {
+                    if (Resources.resources[i] is Resources.Sprite)
+                    {
+                        TreeNode tn = resourcelist.Nodes[0].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+                    else if (Resources.resources[i] is Resources.Object)
+                    {
+                        TreeNode tn = resourcelist.Nodes[1].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+                    else if (Resources.resources[i] is Resources.Background)
+                    {
+                        TreeNode tn = resourcelist.Nodes[2].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+                    else if (Resources.resources[i] is Resources.Sound)
+                    {
+                        TreeNode tn = resourcelist.Nodes[3].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+                    else if (Resources.resources[i] is Resources.Room)
+                    {
+                        TreeNode tn = resourcelist.Nodes[4].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+                    else if (Resources.resources[i] is Resources.Script)
+                    {
+                        TreeNode tn = resourcelist.Nodes[5].Nodes.Add(Resources.resources[i].name);
+                        tn.Tag = i;
+                        tn.ToolTipText = i.ToString();
+                    }
+            }
+        }
+
         void resourcelist_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
             Resources.resources[Convert.ToInt32(e.Node.Tag)].name = e.Label;
@@ -389,6 +438,17 @@ namespace LGM
             {
                 resourcelist.SelectedNode.BeginEdit();
             }
+        }
+
+        private void DeleteResource()
+        {
+            //Delete the selected resource.
+            if (resourcelist.SelectedNode.Parent != null)
+            {
+                Resources.resources.Remove(Resources.resources[Convert.ToInt32(resourcelist.SelectedNode.Tag)]);
+                Resources.resourcecnt--;
+            }
+            UpdateTreeView();
         }
 
         private void Main_Closing(object sender, FormClosingEventArgs e)
@@ -563,7 +623,13 @@ namespace LGM
             //Renames the selected resource
             RenameResource();
         }
+        private void deleteResourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteResource();
+        }
         #endregion
+
+        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
