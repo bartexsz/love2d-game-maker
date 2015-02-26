@@ -154,6 +154,10 @@ namespace LGM
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
                 Resources.resourcetypecnt[0]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
             }
             else
             {
@@ -348,6 +352,10 @@ namespace LGM
         private void resourceListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sizeableTreeView1.Visible = resourceListToolStripMenuItem.Checked;
+            if (sizeableTreeView1.Visible)
+            {
+                sizeableTreeView1.Width = 290;
+            }
         }
 
         private void testbtn_Click(object sender, EventArgs e)
