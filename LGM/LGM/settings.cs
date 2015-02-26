@@ -14,7 +14,6 @@ namespace LGM
 
         public static void LoadSettings()
         {
-            //Loads the settings from settings.cfg
             if (!File.Exists(Application.StartupPath+"\\settings.cfg"))
             {
                 //It doesn't exist! Let's create it!
@@ -31,6 +30,7 @@ namespace LGM
                 }
             }
 
+            //Loads the settings from settings.cfg
             foreach (string setting in File.ReadAllLines(Application.StartupPath + "\\settings.cfg"))
             {
                 switch (setting.Substring(0,1))
@@ -65,6 +65,19 @@ namespace LGM
         {
             //Checks to see if the set folder has the required files for LOVE2D.
             return Directory.Exists(pth) && File.Exists(pth + "\\love.exe") && File.Exists(pth + "\\SDL2.dll") && File.Exists(pth + "\\OpenAL32.dll") && File.Exists(pth + "\\license.txt") && File.Exists(pth + "\\DevIL.dll") && File.Exists(pth + "\\love.dll") && File.Exists(pth + "\\lua51.dll") && File.Exists(pth + "\\mpg123.dll") && File.Exists(pth + "\\msvcp110.dll") && File.Exists(pth + "\\msvcr110.dll");
+        }
+
+        public static void SaveSettings()
+        {
+            try
+            {
+                File.WriteAllText(Application.StartupPath + "\\settings.cfg", "0 ALPHA " + Application.ProductVersion + Environment.NewLine + "1 " + love2dpath);
+            }
+            catch (Exception ex)
+            {
+                System.Media.SystemSounds.Hand.Play();
+                Main.Error(2, "The settings.cfg file could not be created! Please try re-starting the" + Environment.NewLine + "program as an administrator.");
+            }
         }
     }
 

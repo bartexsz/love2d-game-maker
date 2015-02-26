@@ -10,7 +10,7 @@ using System.Resources;
 [assembly: AssemblyDescription("Love Game Maker is a development tool designed for easy creation of games using the LÖVE 2D open-source game engine based off of 'Game Maker' by Mark Overmans.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LGM")]
+[assembly: AssemblyProduct("Love Game Maker")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -34,5 +34,5 @@ using System.Resources;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("0.0.4.9")]
+[assembly: AssemblyFileVersion("0.0.5.0")]
 [assembly: NeutralResourcesLanguageAttribute("")]
