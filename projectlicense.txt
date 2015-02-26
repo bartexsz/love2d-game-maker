@@ -4,7 +4,7 @@ It is currently in the process of being written, as we want to spend time to cre
 The current version of this license is as follows.
 
 The icons used in this program were created by Yannick Lung.
-This program uses the excellent "FastColoredTextBox" example under the following license. The following license only applies to the "FastColoredTextBox" part of the project and does not apply to the rest of the project.
+This program uses the excellent "FastColoredTextBox" example under the following license within the quotes. The following license only applies to the FastColoredTextBox part of the project and does not apply to the rest of the project.
 
 "THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
@@ -18,10 +18,9 @@ This program uses the excellent "FastColoredTextBox" example under the following
   Copyright (C) Pavel Torgashov, 2011-2014."
 
 
+The LÖVE 2D engine, which is included with this project, is under the license detailed in the license.txt file within the love2d folder.
 
-
-The rest of this project as well as LOVE 2D is under the ZLIB License, which is as follows:
-
+The rest of this project is under the ZLIB License, which is as follows:
 
 
 This software is provided 'as-is', without any express or implied
