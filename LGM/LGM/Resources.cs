@@ -18,7 +18,7 @@ namespace LGM
         public static void DefineResourceArrays()
         {
             //Define all those arrays declared above
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 5; i++)
             {
                 resourcetypecnt[i] = 0;
             }
@@ -37,6 +37,45 @@ namespace LGM
         public class Sprite:Types
         {
             public Sprite()
+            {
+                //
+            }
+        }
+
+        public class Object:Types
+        {
+            public Object()
+            {
+                //
+            }
+        }
+
+        public class Background:Types
+        {
+            public Background()
+            {
+                //
+            }
+        }
+
+        public class Sound : Types
+        {
+            public Sound()
+            {
+                //
+            }
+        }
+
+        public class Room : Types
+        {
+            public Room()
+            {
+                //
+            }
+        }
+        public class Script : Types
+        {
+            public Script()
             {
                 //
             }

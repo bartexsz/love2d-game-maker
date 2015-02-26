@@ -149,12 +149,127 @@ namespace LGM
             if (resourcelist.GetNodeCount(true) > 0 && resourcelist.Nodes[0] != null)
             {
                 Resources.resources.Add(new Resources.Sprite());
-                Resources.resources[Resources.resourcecnt].name = "Sprite" + Resources.resourcecnt.ToString();
+                Resources.resources[Resources.resourcecnt].name = "Sprite" + Resources.resourcetypecnt[0].ToString();
                 TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
                 resourcelist.ExpandAll();
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
                 Resources.resourcetypecnt[0]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
+            }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void AddObject()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.GetNodeCount(true) > 1 && resourcelist.Nodes[1] != null)
+            {
+                Resources.resources.Add(new Resources.Object());
+                Resources.resources[Resources.resourcecnt].name = "Object" + Resources.resourcetypecnt[1].ToString();
+                TreeNode newsprite = resourcelist.Nodes[1].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                resourcelist.ExpandAll();
+
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[1]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
+            }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void AddBackground()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.GetNodeCount(true) > 2 && resourcelist.Nodes[2] != null)
+            {
+                Resources.resources.Add(new Resources.Background());
+                Resources.resources[Resources.resourcecnt].name = "Background" + Resources.resourcetypecnt[2].ToString();
+                TreeNode newsprite = resourcelist.Nodes[2].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                resourcelist.ExpandAll();
+
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[2]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
+            }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void AddSound()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.GetNodeCount(true) > 3 && resourcelist.Nodes[3] != null)
+            {
+                Resources.resources.Add(new Resources.Sound());
+                Resources.resources[Resources.resourcecnt].name = "Sound" + Resources.resourcetypecnt[3].ToString();
+                TreeNode newsprite = resourcelist.Nodes[3].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                resourcelist.ExpandAll();
+
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[3]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
+            }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void AddRoom()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.GetNodeCount(true) > 4 && resourcelist.Nodes[4] != null)
+            {
+                Resources.resources.Add(new Resources.Room());
+                Resources.resources[Resources.resourcecnt].name = "Room" + Resources.resourcetypecnt[4].ToString();
+                TreeNode newsprite = resourcelist.Nodes[4].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                resourcelist.ExpandAll();
+
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[4]++; //Increase the number of sprites by one.
+
+                //Signify we made a change and need to save.
+                issaved = false;
+                UpdateTitle();
+            }
+            else
+            {
+                Error(1);
+            }
+        }
+
+        private void AddScript()
+        {
+            //Adds a sprite to the resource list
+            if (resourcelist.GetNodeCount(true) > 5 && resourcelist.Nodes[5] != null)
+            {
+                Resources.resources.Add(new Resources.Script());
+                Resources.resources[Resources.resourcecnt].name = "Script" + Resources.resourcetypecnt[5].ToString();
+                TreeNode newsprite = resourcelist.Nodes[5].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
+                resourcelist.ExpandAll();
+
+                Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
+                Resources.resourcetypecnt[5]++; //Increase the number of sprites by one.
 
                 //Signify we made a change and need to save.
                 issaved = false;
@@ -377,7 +492,7 @@ namespace LGM
         
         private void objectbtn_Click(object sender, EventArgs e)
         {
-           //
+            AddObject();
         }
         
         private void editGeneratedCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -396,7 +511,29 @@ namespace LGM
             options options = new options();
             options.ShowDialog();
         }
+        
+        private void bgbtn_Click(object sender, EventArgs e)
+        {
+            AddBackground();
+        }
+
+        private void soundbtn_Click(object sender, EventArgs e)
+        {
+            AddSound();
+        }
+
+        private void roombtn_Click(object sender, EventArgs e)
+        {
+            AddRoom();
+        }
+
+        private void scriptbtn_Click(object sender, EventArgs e)
+        {
+            AddScript();
+        }
         #endregion
+
+        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer
