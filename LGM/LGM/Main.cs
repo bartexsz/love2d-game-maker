@@ -148,8 +148,9 @@ namespace LGM
             //Adds a sprite to the resource list
             if (resourcelist.GetNodeCount(true) > 0 && resourcelist.Nodes[0] != null)
             {
-                Resources.resourcenames[0, Resources.resourcetypecnt[0]] = "Sprite" + Resources.resourcetypecnt[0].ToString();
-                TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resourcenames[0,Resources.resourcetypecnt[0]]);
+                Resources.resources.Add(new Resources.Sprite());
+                Resources.resources[Resources.resourcecnt].name = "Sprite" + Resources.resourcecnt.ToString();
+                TreeNode newsprite = resourcelist.Nodes[0].Nodes.Add(Resources.resources[Resources.resourcecnt].name);
                 resourcelist.ExpandAll();
                 
                 Resources.resourcecnt++; //Increase the current resource count by one, as we've (obviously) just added a resource.
