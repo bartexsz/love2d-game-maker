@@ -46,6 +46,7 @@ namespace LGM
             resourcelist.MouseMove += treeView1_MouseMove;
             resourcelist.MouseLeave += treeView1_MouseLeave;
             resourcelist.AfterLabelEdit += resourcelist_AfterLabelEdit;
+            resourcelist.NodeMouseDoubleClick += resourcelist_NodeMouseDoubleClick;
             MDIClientSupport.SetBevel(this,false);
             UpdateTitle();
 
@@ -63,6 +64,8 @@ namespace LGM
 
             this.AutoScaleBaseSize = new Size(5, 13);
         }
+
+        
         
         private void Main_Load(object sender, EventArgs e)
         {
@@ -584,6 +587,9 @@ namespace LGM
         private void spritebtn_Click(object sender, EventArgs e)
         {
             AddSprite();
+            Spriteeditor spreditr = new Spriteeditor();
+            spreditr.MdiParent = this;
+            spreditr.Show();
         }
         
         private void objectbtn_Click(object sender, EventArgs e)
@@ -636,9 +642,19 @@ namespace LGM
         {
             DeleteResource();
         }
+        void resourcelist_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Parent != null)
+            {
+                if (Resources.resources[Convert.ToInt32(e.Node.Tag)].GetType().ToString() == "LGM.Resources+Sprite")
+                {
+                    Spriteeditor spreditr = new Spriteeditor();
+                    spreditr.MdiParent = this;
+                    spreditr.Show();
+                }
+            }
+        }
         #endregion
-
-        
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer

@@ -34,3 +34,4 @@ C:\Users\Graham\Documents\GitHub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.Powerfu
 C:\Users\Graham\Documents\GitHub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.Properties.Resources.resources
 C:\Users\Graham\Documents\GitHub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.csproj.GenerateResource.Cache
 C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.options.resources
+C:\Users\Graha_000\Documents\Love Game Maker\LGMgithub\love2d-game-maker\LGM\LGM\obj\Debug\LGM.Spriteeditor.resources
