@@ -443,12 +443,21 @@ namespace LGM
         private void DeleteResource()
         {
             //Delete the selected resource.
+            
             if (resourcelist.SelectedNode.Parent != null)
             {
+                TreeNode parnode = resourcelist.SelectedNode.Parent;
+                TreeNode selnode = resourcelist.SelectedNode;
                 Resources.resources.Remove(Resources.resources[Convert.ToInt32(resourcelist.SelectedNode.Tag)]);
                 Resources.resourcecnt--;
+                UpdateTreeView();
+
+                if (resourcelist.Nodes[parnode.Index].Nodes.Count > selnode.Index)
+                {
+                    resourcelist.SelectedNode = resourcelist.Nodes[parnode.Index].Nodes[selnode.Index];
+                }
             }
-            UpdateTreeView();
+            
         }
 
         private void Main_Closing(object sender, FormClosingEventArgs e)
