@@ -15,6 +15,8 @@ namespace LGM
 
     internal partial class MessageForm : Form
     {
+        public static bool error = false;
+
         internal MessageForm()
         {
             InitializeComponent();
@@ -61,14 +63,14 @@ namespace LGM
                 btnYes.Location = new System.Drawing.Point(Main.CorrectDPIvalues(166, dx), Main.CorrectDPIvalues(16, dx));
                 btnNo.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
                 btnNo.Location = new System.Drawing.Point(Main.CorrectDPIvalues(264, dx), Main.CorrectDPIvalues(16, dx));
-                btnOK.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
-                btnOK.Location = new System.Drawing.Point(Main.CorrectDPIvalues(264, dx), Main.CorrectDPIvalues(16, dx));
                 btnCancel.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
                 btnCancel.Location = new System.Drawing.Point(Main.CorrectDPIvalues(360, dx), Main.CorrectDPIvalues(16, dx));
+                btnOK.Size = new System.Drawing.Size(Main.CorrectDPIvalues(86, dx), Main.CorrectDPIvalues(24, dx));
+                if (!btnOK.Visible) btnOK.Location = btnCancel.Location;
                 picImage.Size = new System.Drawing.Size(Main.CorrectDPIvalues(Main.DPIIconSize(dx), dx), Main.CorrectDPIvalues(Main.DPIIconSize(dx), dx));
                 picImage.Location = new System.Drawing.Point(Main.CorrectDPIvalues(25 - (Main.DPIIconSize(dx) - 32), dx), Main.CorrectDPIvalues(29 - (Main.DPIIconSize(dx) - 32), dx));
                 lblText.Size = new System.Drawing.Size(Main.CorrectDPIvalues(29, dx), Main.CorrectDPIvalues(15, dx));
-                lblText.Location = new System.Drawing.Point(Main.CorrectDPIvalues(65, dx), Main.CorrectDPIvalues(37, dx));
+                if (!error) lblText.Location = new System.Drawing.Point(Main.CorrectDPIvalues(65, dx), Main.CorrectDPIvalues(37, dx)); else lblText.Location = new System.Drawing.Point(Main.CorrectDPIvalues(65, dx), Main.CorrectDPIvalues(15,dx));
                 
             }
             finally

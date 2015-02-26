@@ -29,11 +29,13 @@ namespace LGM
                         message.btnCancel.Visible = false;
                         message.btnOK.Location = message.btnCancel.Location;
                         message.AcceptButton = message.btnOK;
+                        MessageForm.error = false;
                         break;
                     case eDialogButtons.OKCancel:
                         message.btnYes.Visible = false;
                         message.btnNo.Visible = false;
                         message.AcceptButton = message.btnOK;
+                        MessageForm.error = false;
                         break;
                     case eDialogButtons.YesNo:
                         message.btnOK.Visible = false;
@@ -41,10 +43,20 @@ namespace LGM
                         message.btnYes.Location = message.btnOK.Location;
                         message.btnNo.Location = message.btnCancel.Location;
                         message.AcceptButton = message.btnYes;
+                        MessageForm.error = false;
                         break;
                     case eDialogButtons.YesNoCancel:
                         message.btnOK.Visible = false;
                         message.AcceptButton = message.btnYes;
+                        MessageForm.error = false;
+                        break;
+                    case eDialogButtons.ErrorBtn:
+                        message.btnYes.Visible = false;
+                        message.btnNo.Visible = false;
+                        message.btnCancel.Visible = false;
+                        message.btnOK.Location = message.btnCancel.Location;
+                        message.AcceptButton = message.btnOK;
+                        MessageForm.error = true;
                         break;
                 }
 
@@ -60,7 +72,8 @@ namespace LGM
             OK,
             OKCancel,
             YesNo,
-            YesNoCancel
+            YesNoCancel,
+            ErrorBtn,
         }
     }
 }

@@ -29,8 +29,10 @@ namespace LGM
         TreeNode Rooms;
         TreeNode Scripts;
 
-        private Image warning = Properties.Resources.warning1;
-        private Image error = Properties.Resources.error1;
+        public static Image warning = Properties.Resources.warning1;
+        public static Image error = Properties.Resources.error1;
+
+        public static string generatedcode = "";
 
         public Main()
         {
@@ -79,7 +81,7 @@ namespace LGM
             }
 
             CorrectDPI();
-            
+            settings.LoadSettings();  
         }
 
         public static int DPIIconSize(float dx)
@@ -159,11 +161,20 @@ namespace LGM
             }
         }
 
-        private void Error(int errorcode)
+        public static void Error(int errorcode)
         {
             //Displays an error message including an error code, and closes the program.
             System.Media.SystemSounds.Hand.Play();
-            CustomMessageBox.Show("Love Game Maker has encountered an error and needs to close!" + Environment.NewLine + "ERROR CODE: " + errorcode.ToString(), "Love Game Maker", CustomMessageBox.eDialogButtons.OK, error);
+            CustomMessageBox.Show("Love Game Maker has encountered an error and needs to close!" + Environment.NewLine + "ERROR CODE: " + errorcode.ToString(), "Love Game Maker", CustomMessageBox.eDialogButtons.ErrorBtn, error);
+            issaved = true;
+            Application.Exit();
+        }
+
+        public static void Error(int errorcode, string errorstring)
+        {
+            //Displays an error message including an error code, and closes the program.
+            System.Media.SystemSounds.Hand.Play();
+            CustomMessageBox.Show(errorstring + Environment.NewLine + "ERROR CODE: " + errorcode.ToString(), "Love Game Maker", CustomMessageBox.eDialogButtons.ErrorBtn, error);
             issaved = true;
             Application.Exit();
         }
@@ -171,6 +182,7 @@ namespace LGM
         private void TestGame()
         {
             //Tests the game using LOVE 2D
+            GeneratedCode.GenerateCode();
         }
 
         private void Save(bool saveas)
@@ -358,9 +370,24 @@ namespace LGM
         {
            //
         }
-        #endregion
-
         
+        private void editGeneratedCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void settingsbtn_Click(object sender, EventArgs e)
+        {
+            options options = new options();
+            options.ShowDialog();
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            options options = new options();
+            options.ShowDialog();
+        }
+        #endregion
     }
 
     public class MyToolStripSystemRenderer : ToolStripSystemRenderer

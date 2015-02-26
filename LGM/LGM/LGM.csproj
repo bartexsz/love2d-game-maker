@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomMessageBox.cs" />
+    <Compile Include="GeneratedCode.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
     <Compile Include="MessageForm.Designer.cs">
       <DependentUpon>MessageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="options.Designer.cs">
+      <DependentUpon>options.cs</DependentUpon>
+    </Compile>
     <Compile Include="PowerfulSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +82,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources.cs" />
+    <Compile Include="settings.cs" />
     <Compile Include="SizeablePanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="options.resx">
+      <DependentUpon>options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PowerfulSample.resx">
       <DependentUpon>PowerfulSample.cs</DependentUpon>
