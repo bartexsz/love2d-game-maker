@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Sprites");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Objects");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Backgrounds");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Sounds");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Rooms");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Scripts");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Sprites");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Objects");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Backgrounds");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Sounds");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Rooms");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Scripts");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +98,6 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.sizeableTreeView1 = new SizeableTreeView();
             this.resourcelist = new System.Windows.Forms.TreeView();
-            this.renameResourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -231,8 +230,7 @@
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem,
             this.toolStripSeparator7,
-            this.selectAllToolStripMenuItem,
-            this.renameResourceToolStripMenuItem});
+            this.selectAllToolStripMenuItem});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(54, 29);
             this.editMenu.Text = "&Edit";
@@ -243,7 +241,7 @@
             this.undoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
@@ -252,13 +250,13 @@
             this.redoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(223, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -266,7 +264,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.cutToolStripMenuItem.Text = "Cu&t";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
@@ -276,7 +274,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.copyToolStripMenuItem.Text = "&Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
@@ -286,20 +284,20 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.pasteToolStripMenuItem.Text = "&Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(223, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // viewMenu
@@ -670,35 +668,27 @@
             this.resourcelist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resourcelist.Location = new System.Drawing.Point(0, 0);
             this.resourcelist.Name = "resourcelist";
-            treeNode7.Name = "Sprites";
-            treeNode7.Text = "Sprites";
-            treeNode8.Name = "Objects";
-            treeNode8.Text = "Objects";
-            treeNode9.Name = "Backgrounds";
-            treeNode9.Text = "Backgrounds";
-            treeNode10.Name = "Sounds";
-            treeNode10.Text = "Sounds";
-            treeNode11.Name = "Rooms";
-            treeNode11.Text = "Rooms";
-            treeNode12.Name = "Scripts";
-            treeNode12.Text = "Scripts";
+            treeNode19.Name = "Sprites";
+            treeNode19.Text = "Sprites";
+            treeNode20.Name = "Objects";
+            treeNode20.Text = "Objects";
+            treeNode21.Name = "Backgrounds";
+            treeNode21.Text = "Backgrounds";
+            treeNode22.Name = "Sounds";
+            treeNode22.Text = "Sounds";
+            treeNode23.Name = "Rooms";
+            treeNode23.Text = "Rooms";
+            treeNode24.Name = "Scripts";
+            treeNode24.Text = "Scripts";
             this.resourcelist.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12});
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24});
             this.resourcelist.Size = new System.Drawing.Size(286, 602);
             this.resourcelist.TabIndex = 0;
-            // 
-            // renameResourceToolStripMenuItem
-            // 
-            this.renameResourceToolStripMenuItem.Name = "renameResourceToolStripMenuItem";
-            this.renameResourceToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.renameResourceToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
-            this.renameResourceToolStripMenuItem.Text = "Re&name Resource";
-            this.renameResourceToolStripMenuItem.Click += new System.EventHandler(this.renameResourceToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -793,7 +783,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGeneratedCodeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renameResourceToolStripMenuItem;
     }
 }
 
