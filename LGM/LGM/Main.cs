@@ -29,6 +29,7 @@ namespace LGM
         TreeNode Sounds;
         TreeNode Rooms;
         TreeNode Scripts;
+        public static TreeView resourcelistpublic;
 
         public static Image warning = Properties.Resources.warning1;
         public static Image error = Properties.Resources.error1;
@@ -149,7 +150,7 @@ namespace LGM
             }*/
         }
 
-        private void AddSprite()
+        private int AddSprite()
         {
             //Adds a sprite to the resource list
             if (resourcelist.GetNodeCount(true) > 0 && resourcelist.Nodes[0] != null)
@@ -168,10 +169,12 @@ namespace LGM
                 //Signify we made a change and need to save.
                 issaved = false;
                 UpdateTitle();
+                return Resources.resourcecnt-1;
             }
             else
             {
                 Error(1);
+                return 0;
             }
         }
 
@@ -382,7 +385,8 @@ namespace LGM
             }
         }
 
-        private void UpdateTreeView()
+
+        public static void UpdateTreeView(TreeView resourcelist)
         {
             for (int k = 0; k < resourcelist.Nodes.Count; k++)
             {
@@ -453,7 +457,8 @@ namespace LGM
                 TreeNode selnode = resourcelist.SelectedNode;
                 Resources.resources.Remove(Resources.resources[Convert.ToInt32(resourcelist.SelectedNode.Tag)]);
                 Resources.resourcecnt--;
-                UpdateTreeView();
+                UpdateTreeView(resourcelist);
+                resourcelistpublic = resourcelist;
 
                 if (resourcelist.Nodes[parnode.Index].Nodes.Count > selnode.Index)
                 {
@@ -586,9 +591,20 @@ namespace LGM
         
         private void spritebtn_Click(object sender, EventArgs e)
         {
-            AddSprite();
             Spriteeditor spreditr = new Spriteeditor();
             spreditr.MdiParent = this;
+            spreditr.id = AddSprite();
+            spreditr.name = Resources.resources[spreditr.id].name;
+            Resources.Sprite spr = (Resources.Sprite)Resources.resources[spreditr.id];
+            
+            if (spr.sprite != null)
+            {
+                spreditr.sprite = spr.sprite;
+            }
+
+            UpdateTreeView(resourcelist);
+            resourcelistpublic = resourcelist;
+            
             spreditr.Show();
         }
         
@@ -657,6 +673,10 @@ namespace LGM
                     {
                         spreditr.sprite = spr.sprite;
                     }
+
+                    UpdateTreeView(resourcelist);
+                    resourcelistpublic = resourcelist;
+
                     spreditr.Show();
                 }
             }

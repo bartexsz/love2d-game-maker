@@ -65,6 +65,7 @@ namespace LGM
             Resources.resources[id].name = name;
             Resources.Sprite spr = (Resources.Sprite)Resources.resources[id];
             spr.sprite = sprite;
+            Main.UpdateTreeView(Main.resourcelistpublic);
             this.Close();
         }
     }
