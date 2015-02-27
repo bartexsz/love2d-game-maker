@@ -19,6 +19,12 @@ namespace LGM
         public Spriteeditor()
         {
             InitializeComponent();
+            this.FormClosing += Spriteeditor_FormClosing;
+        }
+
+        void Spriteeditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Resources.resources[id].isbeingedited = false;
         }
 
         private void Spriteeditor_Load(object sender, EventArgs e)

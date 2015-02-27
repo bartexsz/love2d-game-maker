@@ -33,6 +33,7 @@ namespace LGM
             }
             public string data = "";
             public string name = "Untitled Resource";
+            public bool isbeingedited = false;
         }
         
         public class Sprite:Types

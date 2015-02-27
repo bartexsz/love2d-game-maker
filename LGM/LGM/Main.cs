@@ -594,6 +594,7 @@ namespace LGM
             Spriteeditor spreditr = new Spriteeditor();
             spreditr.MdiParent = this;
             spreditr.id = AddSprite();
+            Resources.resources[spreditr.id].isbeingedited = true;
             spreditr.name = Resources.resources[spreditr.id].name;
             Resources.Sprite spr = (Resources.Sprite)Resources.resources[spreditr.id];
             
@@ -660,10 +661,11 @@ namespace LGM
         }
         void resourcelist_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.Parent != null)
+            if (e.Node.Parent != null && !Resources.resources[Convert.ToInt32(e.Node.Tag)].isbeingedited)
             {
                 if (Resources.resources[Convert.ToInt32(e.Node.Tag)].GetType().ToString() == "LGM.Resources+Sprite")
                 {
+                    Resources.resources[Convert.ToInt32(e.Node.Tag)].isbeingedited = true;
                     Spriteeditor spreditr = new Spriteeditor();
                     spreditr.MdiParent = this;
                     spreditr.name = Resources.resources[Convert.ToInt32(e.Node.Tag)].name;
