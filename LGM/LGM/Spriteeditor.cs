@@ -26,13 +26,19 @@ namespace LGM
         void Spriteeditor_FormClosing(object sender, FormClosingEventArgs e)
         {
             Resources.resources[id].isbeingedited = false;
+            ((Resources.Sprite)Resources.resources[id]).origin = new Point((int)numericUpDown1.Value,(int)numericUpDown2.Value);
         }
 
         private void Spriteeditor_Load(object sender, EventArgs e)
         {
             if (sprites.Count > 0)
             {
+                btnSave.Enabled = true;
+                btnEdit.Enabled = true;
+                button3.Enabled = true;
+
                 int i = 0;
+
                 foreach (Image spr in sprites)
                 {
                     PictureBox pb = new PictureBox();
@@ -54,8 +60,14 @@ namespace LGM
                     }
                 }
 
+                groupBox1.Enabled = true;
+
+                numericUpDown1.Maximum = sprites[0].Width;
+                numericUpDown2.Maximum = sprites[0].Height;
+                
+                numericUpDown1.Value = ((Resources.Sprite)Resources.resources[id]).origin.X;
+                numericUpDown2.Value = ((Resources.Sprite)Resources.resources[id]).origin.Y;
             }
-            //framepb1.BackColor = Color.FromArgb(144, 212, 242);
             textBox1.Text = name;
         }
 
@@ -80,23 +92,71 @@ namespace LGM
             {
                 Bitmap spr = new Bitmap(ofd.FileName);
 
-                PictureBox pb = new PictureBox();
-                sprites.Add(spr);
-                pboxes.Add(pb);
-                pb.Image = spr;
-                TabPage tbpg = new TabPage();
-                tbpg.Text = "frame"+(tabControl1.TabPages.Count+1).ToString();
-                pb.Parent = tbpg;
-                pb.Dock = DockStyle.Fill;
-                pb.BackColor = Color.FromArgb(144, 212, 242);
-                tbpg.Controls.Add(pb);
-                tabControl1.TabPages.Add(tbpg);
-
-                if (tabControl1.TabPages.Count > 1)
+                if (sprites.Count > 0)
                 {
-                    button2.Enabled = true;
+                    if (spr.Width <= sprites[0].Width && spr.Height <= sprites[0].Height)
+                    {
+                        PictureBox pb = new PictureBox();
+                        sprites.Add(spr);
+                        pboxes.Add(pb);
+                        pb.Image = spr;
+                        TabPage tbpg = new TabPage();
+                        tbpg.Text = "frame" + (tabControl1.TabPages.Count + 1).ToString();
+                        pb.Parent = tbpg;
+                        pb.Dock = DockStyle.Fill;
+                        pb.BackColor = Color.FromArgb(144, 212, 242);
+                        tbpg.Controls.Add(pb);
+                        tabControl1.TabPages.Add(tbpg);
+
+                        if (tabControl1.TabPages.Count > 1)
+                        {
+                            button2.Enabled = true;
+                        }
+
+                        btnEdit.Enabled = true;
+                        btnSave.Enabled = true;
+                        button3.Enabled = true;
+                        groupBox1.Enabled = true;
+
+                        numericUpDown1.Maximum = spr.Width;
+                        numericUpDown2.Maximum = spr.Height;
+                    }
+                    else
+                    {
+                        System.Media.SystemSounds.Hand.Play();
+                        CustomMessageBox.Show("Your sprites must be all of the same maximum size to be loaded!", "Love Game Maker", CustomMessageBox.eDialogButtons.OK, Main.error);
+                    }
+                }
+                else
+                {
+                    PictureBox pb = new PictureBox();
+                    sprites.Add(spr);
+                    pboxes.Add(pb);
+                    pb.Image = spr;
+                    TabPage tbpg = new TabPage();
+                    tbpg.Text = "frame" + (tabControl1.TabPages.Count + 1).ToString();
+                    pb.Parent = tbpg;
+                    pb.Dock = DockStyle.Fill;
+                    pb.BackColor = Color.FromArgb(144, 212, 242);
+                    tbpg.Controls.Add(pb);
+                    tabControl1.TabPages.Add(tbpg);
+
+                    if (tabControl1.TabPages.Count > 1)
+                    {
+                        button2.Enabled = true;
+                    }
+
+                    btnEdit.Enabled = true;
+                    btnSave.Enabled = true;
+                    button3.Enabled = true;
+                    groupBox1.Enabled = true;
+
+                    numericUpDown1.Maximum = spr.Width;
+                    numericUpDown2.Maximum = spr.Height;
                 }
             }
+
+            
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -171,9 +231,16 @@ namespace LGM
         {
             this.UseWaitCursor = true;
 
-            if (System.IO.Directory.Exists(Application.StartupPath+"\\temp"))
+            try
             {
-                System.IO.Directory.Delete(Application.StartupPath+"\\temp",true);
+                if (System.IO.Directory.Exists(Application.StartupPath + "\\temp"))
+                {
+                    System.IO.Directory.Delete(Application.StartupPath + "\\temp", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                //
             }
 
             System.IO.Directory.CreateDirectory(Application.StartupPath+"\\temp");
@@ -185,8 +252,117 @@ namespace LGM
 
             pnt.Start();
             pnt.WaitForExit();
-            sprites[tabControl1.SelectedIndex] = new Bitmap(Application.StartupPath+"\\temp\\tmpedit.png");
+            if (new Bitmap(Application.StartupPath + "\\temp\\tmpedit.png").Width <= sprites[0].Width && new Bitmap(Application.StartupPath + "\\temp\\tmpedit.png").Height <= sprites[0].Height)
+            {
+                sprites[tabControl1.SelectedIndex] = new Bitmap(Application.StartupPath+"\\temp\\tmpedit.png");
+            }
+            else
+            {
+                System.Media.SystemSounds.Hand.Play();
+                CustomMessageBox.Show("Your sprites must be all of the same maximum size to be loaded!","Love Game Maker",CustomMessageBox.eDialogButtons.OK,Main.error);
+            }
+            tabControl1.TabPages.Clear();
+            pboxes.Clear();
+            int i = 0;
+
+            foreach (Image spr in sprites)
+            {
+                PictureBox pb = new PictureBox();
+                pboxes.Add(pb);
+                pb.Image = spr;
+                TabPage tbpg = new TabPage();
+                tbpg.Text = "frame" + i.ToString();
+                tabControl1.TabPages.Add(tbpg);
+                pb.Parent = tbpg;
+                pb.Dock = DockStyle.Fill;
+                pb.BackColor = Color.FromArgb(144, 212, 242);
+                tbpg.Controls.Add(pb);
+                pboxes.Add(pb);
+                i++;
+
+                if (tabControl1.TabPages.Count > 1)
+                {
+                    button2.Enabled = true;
+                }
+            }
             this.UseWaitCursor = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sprites.Remove(sprites[tabControl1.SelectedIndex]);
+            tabControl1.TabPages.Clear();
+            pboxes.Clear();
+            int i = 0;
+
+            foreach (Image spr in sprites)
+            {
+                PictureBox pb = new PictureBox();
+                pboxes.Add(pb);
+                pb.Image = spr;
+                TabPage tbpg = new TabPage();
+                tbpg.Text = "frame" + i.ToString();
+                tabControl1.TabPages.Add(tbpg);
+                pb.Parent = tbpg;
+                pb.Dock = DockStyle.Fill;
+                pb.BackColor = Color.FromArgb(144, 212, 242);
+                tbpg.Controls.Add(pb);
+                pboxes.Add(pb);
+                i++;
+
+                if (tabControl1.TabPages.Count > 1)
+                {
+                    button2.Enabled = true;
+                }
+            }
+
+            if (tabControl1.SelectedIndex > 0)
+            {
+                tabControl1.SelectedIndex = tabControl1.SelectedIndex - 1;
+            }
+
+            if (tabControl1.TabPages.Count > tabControl1.SelectedIndex)
+            {
+                button2.Enabled = true;
+            }
+
+            if (tabControl1.SelectedIndex == 0)
+            {
+                button1.Enabled = false;
+            }
+
+            if (tabControl1.TabPages.Count > tabControl1.SelectedIndex)
+            {
+                tabControl1.SelectedIndex = tabControl1.SelectedIndex + 1;
+            }
+
+            if (tabControl1.TabPages.Count <= tabControl1.SelectedIndex + 1)
+            {
+                button2.Enabled = false;
+            }
+
+            if (tabControl1.SelectedIndex > 0)
+            {
+                button1.Enabled = true;
+            }
+
+            if (tabControl1.SelectedIndex >= 0)
+            {
+                label3.Text = tabControl1.SelectedIndex.ToString();
+            }
+            else
+            {
+                label3.Text = "0";
+                btnEdit.Enabled = false;
+                btnSave.Enabled = false;
+                button3.Enabled = false;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            numericUpDown1.Value = (int)(sprites[0].Width / 2);
+            numericUpDown2.Value = (int)(sprites[0].Height / 2);
         }
     }
 }
