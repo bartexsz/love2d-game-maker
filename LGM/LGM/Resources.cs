@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace LGM
 {
@@ -35,10 +36,11 @@ namespace LGM
         }
         
         public class Sprite:Types
-        {
+        { 
+            public Image sprite = null;
             public Sprite()
             {
-                //
+                
             }
         }
 

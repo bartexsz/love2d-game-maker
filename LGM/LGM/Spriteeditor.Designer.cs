@@ -53,36 +53,42 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOK.Location = new System.Drawing.Point(3, 3);
+            this.btnOK.Location = new System.Drawing.Point(2, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(117, 35);
+            this.btnOK.Size = new System.Drawing.Size(78, 23);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(12, 99);
+            this.btnLoad.Location = new System.Drawing.Point(8, 64);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(224, 35);
+            this.btnLoad.Size = new System.Drawing.Size(149, 23);
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "&Load a Sprite";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 140);
+            this.btnSave.Location = new System.Drawing.Point(8, 91);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(224, 35);
+            this.btnSave.Size = new System.Drawing.Size(149, 23);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "&Save this Sprite";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 181);
+            this.btnEdit.Location = new System.Drawing.Point(8, 118);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(224, 35);
+            this.btnEdit.Size = new System.Drawing.Size(149, 23);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "&Edit this Sprite";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -93,17 +99,19 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 367);
+            this.panel1.Location = new System.Drawing.Point(0, 250);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 41);
+            this.panel1.Size = new System.Drawing.Size(359, 27);
             this.panel1.TabIndex = 5;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(122, 3);
+            this.btnCancel.Location = new System.Drawing.Point(81, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 35);
+            this.btnCancel.Size = new System.Drawing.Size(78, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -112,17 +120,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Location = new System.Drawing.Point(8, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 46);
+            this.textBox1.Location = new System.Drawing.Point(49, 30);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 26);
+            this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -136,9 +146,9 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(245, 367);
+            this.panel3.Size = new System.Drawing.Size(245, 250);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -146,8 +156,9 @@
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 367);
+            this.panel4.Size = new System.Drawing.Size(1, 250);
             this.panel4.TabIndex = 2;
             // 
             // splitContainer1
@@ -156,6 +167,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(1, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -165,35 +177,38 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 4, 4, 0);
-            this.splitContainer1.Size = new System.Drawing.Size(532, 367);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 3, 0);
+            this.splitContainer1.Size = new System.Drawing.Size(358, 250);
             this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(279, 363);
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.pictureBox1.Size = new System.Drawing.Size(107, 247);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Spriteeditor
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(533, 408);
+            this.ClientSize = new System.Drawing.Size(359, 277);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(555, 464);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(375, 315);
             this.Name = "Spriteeditor";
             this.Text = "Sprite Editor";
             this.Load += new System.EventHandler(this.Spriteeditor_Load);

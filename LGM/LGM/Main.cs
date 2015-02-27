@@ -652,6 +652,11 @@ namespace LGM
                     spreditr.MdiParent = this;
                     spreditr.name = Resources.resources[Convert.ToInt32(e.Node.Tag)].name;
                     spreditr.id = Convert.ToInt32(e.Node.Tag);
+                    Resources.Sprite spr = (Resources.Sprite)Resources.resources[Convert.ToInt32(e.Node.Tag)];
+                    if (spr.sprite != null)
+                    {
+                        spreditr.sprite = spr.sprite;
+                    }
                     spreditr.Show();
                 }
             }

@@ -40,5 +40,32 @@ namespace LGM
         {
             name = textBox1.Text;
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.AddExtension = true;
+            ofd.CheckFileExists = true;
+            ofd.Title = "Load a Sprite...";
+            ofd.Filter = "Portable Network Graphic|*.png|JPEG Image|*.jpg*.jpeg";
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                sprite = new Bitmap(ofd.FileName);
+                pictureBox1.Image = sprite;
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                sprite = pictureBox1.Image;
+            }
+            name = textBox1.Text;
+            Resources.resources[id].name = name;
+            Resources.Sprite spr = (Resources.Sprite)Resources.resources[id];
+            spr.sprite = sprite;
+            this.Close();
+        }
     }
 }
