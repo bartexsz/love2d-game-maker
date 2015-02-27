@@ -656,6 +656,9 @@ namespace LGM
 
         private void roombtn_Click(object sender, EventArgs e)
         {
+            Roomeditor rmeditr = new Roomeditor();
+            rmeditr.MdiParent = this;
+            rmeditr.Show();
             AddRoom();
         }
 

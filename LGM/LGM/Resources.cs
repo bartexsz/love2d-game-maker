@@ -49,6 +49,8 @@ namespace LGM
 
         public class Object:Types
         {
+            public Image defaultsprite = null;
+
             public Object()
             {
                 //
