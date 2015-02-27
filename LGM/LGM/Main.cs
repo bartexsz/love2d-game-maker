@@ -597,10 +597,23 @@ namespace LGM
             Resources.resources[spreditr.id].isbeingedited = true;
             spreditr.name = Resources.resources[spreditr.id].name;
             Resources.Sprite spr = (Resources.Sprite)Resources.resources[spreditr.id];
-            
-            if (spr.sprite != null)
+
+            if (spr.sprites.Count > 0)
             {
-                spreditr.sprite = spr.sprite;
+                int i = 0;
+                
+                foreach (Image frm in spr.sprites)
+                {
+                    if (spr.sprites[i] != null)
+                    {
+                        spreditr.sprites.Add(spr.sprites[i]);
+                    }
+                    i++;
+                }
+            }
+            else
+            {
+                //
             }
 
             UpdateTreeView(resourcelist);
@@ -671,9 +684,16 @@ namespace LGM
                     spreditr.name = Resources.resources[Convert.ToInt32(e.Node.Tag)].name;
                     spreditr.id = Convert.ToInt32(e.Node.Tag);
                     Resources.Sprite spr = (Resources.Sprite)Resources.resources[Convert.ToInt32(e.Node.Tag)];
-                    if (spr.sprite != null)
+
+                    int i = 0;
+
+                    foreach (Image frm in spr.sprites)
                     {
-                        spreditr.sprite = spr.sprite;
+                        if (frm != null)
+                        {
+                            spreditr.sprites.Add(frm);
+                        }
+                        i++;
                     }
 
                     UpdateTreeView(resourcelist);

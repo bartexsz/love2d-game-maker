@@ -38,10 +38,12 @@ namespace LGM
         
         public class Sprite:Types
         { 
-            public Image sprite = null;
+            public List<Image> sprites = new List<Image>(); //The sprite's images
+            public Point origin = new Point(0,0); //The sprite's origin.
+
             public Sprite()
             {
-                
+                //
             }
         }
 
